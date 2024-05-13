@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uniQ Adapting Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">
+            <h2>UniQ Adapting Learning</h2>
+        </div>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a href="messages.html">Messages</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="help.html">Help & Support</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header class="dashboard-header">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+
+
+            <div class="profile-icons">
+                <i class="fas fa-envelope"><span class="notification-icon"></span></i>
+                <i class="fas fa-bell"><span class="notification-dot"></span></i>
+                <i class="fas fa-user-circle"></i>
+            </div>
+
+        </header>
+
+        <section class="input-fields">
+            <div class="field field-student-name">
+                <label for="studentName">Student Name:</label>
+                <input type="text" id="studentName" placeholder="Last Name, First Name">
+            </div>
+            <div class="field">
+                <label for="moduleGrade">Module Grade:</label>
+                <input type="number" id="moduleGrade" placeholder="Enter Module Grade">
+            </div>
+            <div class="field">
+                <label for="videoGrade">Video Grade:</label>
+                <input type="number" id="videoGrade" placeholder="Enter Video Grade">
+            </div>
+            <div class="field">
+                <label for="textChatGrade">Text Chat Grade:</label>
+                <input type="number" id="textChatGrade" placeholder="Enter Text Chat Grade">
+            </div>
+            <div class="field">
+                <label for="meetingGrade">Meeting Grade:</label>
+                <input type="number" id="meetingGrade" placeholder="Enter Meeting Grade">
+            </div>
+        </section>
+        <div id="toaster" class="toaster" style="display: none;">Please enter all required fields correctly.</div>
+        <button onclick="addStudentGrades()">Add Student Grades</button>
+        <div class="chart-container">
+            <div class="chart" id="lineChartContainer">
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart" id="pieChartContainer">
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="chart" id="columnChartContainer">
+                <canvas id="columnChart"></canvas>
+            </div>
+            <div class="chart results" id="resultsContainer">
+                Results will appear here.
+            </div>
+            <button onclick="exportToExcel()">Export to Excel</button>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
